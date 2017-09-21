@@ -16,13 +16,18 @@ public class PapelMoeda {
      * [COMISSÃO]
      */
 
-    protected int valor;
-    protected int quantidade;
+    private int valor;
+    private int quantidade;
 
     public PapelMoeda(int valor, int quantidade) {
         this.valor = valor;
         this.quantidade = quantidade;
     }
+
+    public PapelMoeda() {
+    }
+    
+    
 
     public int getValor() {
         return valor;

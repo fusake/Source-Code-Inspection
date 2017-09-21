@@ -23,28 +23,45 @@ public class PapelMoedaTest {
     }
     
     @Test
-    public void papelMoedaComValorNegativoTest() {
+    public void papelMoedaComValorPositivo() throws Exception{
+        try{
         PapelMoeda papel = new PapelMoeda();
-        assertEquals(-5, papel.getValor(), 0.00001);
+        assertTrue(papel.getValor() > 0);
+        }catch(AssertionError ae){
+            String assertionError = ae.toString();
+            System.out.println(assertionError);
+        }
         
     }
     
     @Test
-    public void papelMoedaComQuantidadeNegativa() {
+    public void papelMoedaComQuantidadePositiva() throws Exception{
+        try{
         PapelMoeda papel = new PapelMoeda();
-        assertEquals(-1, papel.getQuantidade(), 0.00001);
+        assertTrue(papel.getQuantidade() > 0);
+        }catch(AssertionError ae){
+            ae.printStackTrace();
+        }
     }
     
     @Test
-    public void papelMoedaComValorZerado() {
+    public void papelMoedaComValorDiferenteDeZero() throws Exception{
+        try{
         PapelMoeda papel = new PapelMoeda();
-        assertEquals(0, papel.getValor(), 0.0001);
+        assertTrue(papel.getValor() != 0);
+        }catch(AssertionError ae){
+            ae.printStackTrace();
+        }
     }
     
     @Test
-    public void papelMoedaComQuantidadeZerada() {
+    public void papelMoedaComQuantidadeDiferenteDeZero() throws Exception{
+        try{
         PapelMoeda papel = new PapelMoeda();
-        assertEquals(0, papel.getQuantidade(), 0.0001);
+        assertTrue(papel.getQuantidade() != 0);
+        }catch(AssertionError ae){
+            ae.printStackTrace();
+        }
     }
     
 }
